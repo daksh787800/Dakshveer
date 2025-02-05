@@ -1,26 +1,35 @@
 public class Calculator {
-    public static void main(String[] args) {
-        if (args.length != 3) {
-            System.out.println("Usage: java Calculator <num1> <operator> <num2>");
-            return;
-        }
+    
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    // Method to add two doubles
+    public double add(double a, double b) {
+        return a + b;
+    }
+    
+    // Method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
 
-        int num1 = Integer.parseInt(args[0]);
-        String operator = args[1];
-        int num2 = Integer.parseInt(args[2]);
+    // Main method to demonstrate the overloaded add() methods
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
         
-        switch (operator) {
-            case "+":
-                System.out.println("Sum of " + num1 + " and " + num2 + " is " + (num1 + num2));
-                break;
-            case "-":
-                System.out.println("Difference between " + num1 + " and " + num2 + " is " + (num1 - num2));
-                break;
-            case "*":
-                System.out.println("Product of " + num1 + " and " + num2 + " is " + (num1 * num2));
-                break;
-            default:
-                System.out.println("Invalid operator. Use +, -, or *.");
-        }
+        // Adding two integers
+        int sumInt = calc.add(10, 20);
+        System.out.println("Sum of 10 and 20 (integers): " + sumInt);
+        
+        // Adding two doubles
+        double sumDouble = calc.add(10.5, 20.5);
+        System.out.println("Sum of 10.5 and 20.5 (doubles): " + sumDouble);
+        
+        // Adding three integers
+        int sumThreeInts = calc.add(10, 20, 30);
+        System.out.println("Sum of 10, 20, and 30 (three integers): " + sumThreeInts);
     }
 }
+
